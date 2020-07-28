@@ -4,9 +4,9 @@ public class singleLinkedList {
 	
 	
 	
-	class Node{
+	 class Node{
 		
-		int data;
+		 int data;
 		Node next;
 		
 		public Node(int d) {
@@ -32,7 +32,7 @@ public class singleLinkedList {
 		}
 	}
 	
-	Node head;  // Object of that Class , this is the first object known as head and it's value is basically zero
+	static Node head;  // Object of that Class , this is the first object known as head and it's value is basically zero
 	long size;
 	
 	public singleLinkedList() {
@@ -41,30 +41,72 @@ public class singleLinkedList {
 	}
 	
 	
-	public void insert(int toBeAdded) {
-		Node newNode = new Node(toBeAdded);
+	public void insertAtTail(int toBeAdded) {
+//		Node newNode = new Node(toBeAdded);
+//		size++;
+//		newNode.next = head;
+//		head = newNode;
+		Node newNode = head;
 		size++;
-		newNode.next = head;
-		head = newNode;
+		if(head == null) {
+			newNode = new Node(toBeAdded);
+		}
+		
+		while(newNode.next!=null) {
+			newNode = newNode.next;
+		}
+		newNode.next = 	new Node(toBeAdded);
 		
 	 
 	 System.out.println(newNode.data);
-	 System.out.println(newNode.getNext());
+//	 System.out.println(newNode.getNext());
+//	 System.out.println("The size of the linked list is " +size);
 		
 		
 		  
 		
 		
 	}
-	
+//	
+//	public void inBetween(Node previous_Node , int position , int d) {
+//				
+//				if(position ==1) {
+//					Node newNode = new Node(d);
+//					newNode.next = head;
+//					head = newNode;
+//				}
+//				else {
+//					while(position--!=0) {
+//						if(position == 1) {
+//							Node newNode = new Node(d);
+//							
+//							newNode.next = head.next;
+//							head.next = newNode;
+//							break;
+//						}
+//						head = head.next;
+//					}
+//					
+//				}
+//		
+//		
+//	}
+//	
 	
 	
 	
 	public static void main(String[] args) {
 		singleLinkedList obj = new singleLinkedList();
-		obj.insert(2);
-		obj.insert(3);
-		obj.insert(6);
+		
+		
+		
+		
+		obj.insertAtTail(2);
+		obj.insertAtTail(3);
+		obj.insertAtTail(6);
+		obj.insertAtTail(8);
+//		obj.inBetween(3);
+	
 		
 		
 	}
