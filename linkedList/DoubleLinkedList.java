@@ -8,7 +8,7 @@ public class DoubleLinkedList {
 	
 	
 	
-	class DNode{
+	static class DNode{
 		DNode next;
 		DNode prev;
 		int data;
@@ -126,10 +126,49 @@ public class DoubleLinkedList {
 		size--;
 	}
 	
+	public void print() {
+		String s = ",";
+		DNode v = header.getNext();
+		
+		while(v!=tail) {
+			s = s + v.getData();
+			v = v.getNext();
+			if(v!=tail) {
+				s = s + ",";
+			}
+			
+			System.out.println(s);
+		}
+	}
+	
 	
 	
 
 	public static void main(String[] args) {
+		
+		DoubleLinkedList obj = new DoubleLinkedList() ;
+		DNode node1 = new DNode(null, null, 2);
+		DNode node2 = new DNode(node1 , null , 5) ;
+		DNode node3 = new DNode(node2 , node1 , 10);
+		obj.addFirst(node1);
+		obj.addAfter(node1, node2);
+		obj.addBefore(node2, node3);
+		obj.print();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 
 	}
