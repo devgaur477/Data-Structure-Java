@@ -115,13 +115,22 @@ public class DoubleLinkedList {
 		addBefore(tail, v);
 	}
 	
-	
+	public void remove(DNode v) {
+		DNode u = getNext(v);
+		DNode w = getNext(v);
+		
+		w.setPrev(u);
+		u.setNext(w);
+		v.setNext(null);
+		v.setPrev(null);
+		size--;
+	}
 	
 	
 	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
