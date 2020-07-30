@@ -32,7 +32,7 @@ public class singleLinkedList {
 		}
 	}
 	
-	static Node head;  // Object of that Class , this is the first object known as head and it's value is basically zero
+	 static Node head;  // Object of that Class , this is the first object known as head and it's value is basically zero
 	long size;
 	
 	public singleLinkedList() {
@@ -92,21 +92,38 @@ public class singleLinkedList {
 //		
 //	}
 //	
+	public void removeFirst() {
+		if(head == null) {
+			System.out.println("Empty List");
+		}
+		head = head.getNext();
+		head.setNext(null);
+		
+	}
 	
-	
+	public void insertFirst(int value) {
+				Node v = new Node(value);
+			//Node newNode = new Node(d);
+			v.setNext(head);
+			head = v.next;
+			
+			System.out.println(""+v.data);
+	}
 	
 	public static void main(String[] args) {
 		singleLinkedList obj = new singleLinkedList();
 		
 		
+		obj.insertFirst(2);
+		obj.insertAtTail(5);
+		obj.insertFirst(1);
 		
-		
-		obj.insertAtTail(2);
-		obj.insertAtTail(3);
-		obj.insertAtTail(6);
-		obj.insertAtTail(8);
+		//		obj.insertAtTail(2);
+//		obj.insertAtTail(3);
+//		obj.insertAtTail(6);
+//		obj.insertAtTail(8);
 //		obj.inBetween(3);
-	
+//		obj.removeFirst();
 		
 		
 	}
